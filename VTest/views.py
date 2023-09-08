@@ -4,7 +4,7 @@ import openai
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 def home(request):
     return HttpResponse("hello")
