@@ -3,8 +3,15 @@ import json
 import openai
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import os
 
-openai.api_key = "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"
+from dotenv import load_dotenv
+
+# loading the enviorment
+load_dotenv()
+
+openai.api_key = os.environ.get('OPENAI_API_KEY')
+
 
 def home(request):
     return HttpResponse("hello")
