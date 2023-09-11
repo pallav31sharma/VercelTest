@@ -23,7 +23,7 @@ def chat_api(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         message = data.get('message')
-        print(os.environ.get('OPENAI_API_KEY'))
+        return HttpResponse(os.environ.get('OPENAI_API_KEY'))
         message = {
             'role': 'user',
             'content': message
